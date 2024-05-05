@@ -132,8 +132,12 @@ class FormularioGraficasDesign(tk.Frame):
             print("Añadiendo VGG y recalculando...")
             #self.graficar_lpips(self.ax3, vgg=True)
             lpips_vgg = lpips.LPIPS(net='vgg')
+<<<<<<< HEAD
             self.mostrar_ventana_carga(lpips_vgg, 'VGG')
             #self.process_videos(lpips_vgg, 'VGG')
+=======
+            self.process_videos(lpips_vgg, 'VGG')
+>>>>>>> d8609f0c7b1ade67a597de826f2accb20b72b340
             # Rehacer las gráficas incluyendo VGG
             self.graficar_lpips(self.ax3, self.average_lpips, self.confidence_intervals_lpips, remake=True)
             self.canvas.draw()
@@ -267,7 +271,11 @@ class FormularioGraficasDesign(tk.Frame):
             self.formulario_maestro.average_ssim = self.average_ssim
             self.formulario_maestro.confidence_intervals_ssim = self.confidence_intervals_ssim
 
+<<<<<<< HEAD
             print(f'Video: {video_name} {model_name}')
+=======
+            print(f'Video: {video_name}')
+>>>>>>> d8609f0c7b1ade67a597de826f2accb20b72b340
             print(f'LPIPS promedio: {avg_lpips:.3f}, PSNR promedio: {avg_psnr:.2f}, SSIM promedio: {avg_ssim:.3f}')
             print('---------------------------------------------------')
         self.cargar_completado = True
@@ -321,7 +329,11 @@ class FormularioGraficasDesign(tk.Frame):
         model_name = 'AlexNet'
         if metricas[model_name] and intervalos[model_name]:
             if len(metricas[model_name]) == len(suffix_video_names) and len(intervalos[model_name]) == len(suffix_video_names):
+<<<<<<< HEAD
                 color = 'blue' if ylabel == "PSNR [dB]" else 'red'
+=======
+                color = 'blue' if ylabel == "PSNR" else 'red'
+>>>>>>> d8609f0c7b1ade67a597de826f2accb20b72b340
                 ax.bar(positions, metricas[model_name], yerr=intervalos[model_name], capsize=5, color=color, align='center')
                 ax.set_title(titulo, fontsize=16)
                 #ax.set_xlabel('Videos', fontsize=16)
